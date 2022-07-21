@@ -2,7 +2,7 @@ function Navbar(){
     return (
         <>
         <header>
-            <h1></h1>
+            <h1>Elite Tecno</h1>
             <nav>
                 <a href="#">Home</a>
                 <a href="#">Productos</a>

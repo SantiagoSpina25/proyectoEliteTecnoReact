@@ -5,10 +5,10 @@ function App() {
     <>
     <Navbar/>
     <main>
-      <h2>Hola mundo</h2>
+      
     </main>
     <footer>
-      <p>Hola mundo</p>
+      
     </footer>
     </> 
   )
