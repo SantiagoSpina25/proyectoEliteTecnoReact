@@ -1,15 +1,17 @@
-
-
 function Navbar(){
     return (
+        <>
         <header>
             <h1></h1>
             <nav>
-                <a>Home</a>
-                <a>Productos</a>
-                <a>Contacto</a>
+                <a href="#">Home</a>
+                <a href="#">Productos</a>
+                <a href="#">Contacto</a>
             </nav>
         </header>
+        </>
+        
+
     )
 }
 
