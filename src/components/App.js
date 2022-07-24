@@ -1,11 +1,11 @@
 
-import Navbar from "./NavBar";
+import NavBar from "./NavBar";
 import ItemListContainer from "./ItemListContainer";
 
 const App = () => {
   return (
     <>
-    <Navbar/>
+    <NavBar/>
     <main>
     <ItemListContainer
     greeting= "Soy una lista"
