@@ -9,8 +9,9 @@ const NavBar = () => {
             <nav className="nav">
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Productos</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Procesadores</a></li>
+                    <li><a href="#">Graficas</a></li>
+                    <li><a href="#">Perifericos</a></li>
                 </ul>    
             </nav>
         </header>

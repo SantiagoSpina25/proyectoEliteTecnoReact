@@ -1,8 +1,9 @@
 
-const Footer = ({contador})=>{
+const Footer = ()=>{
     return(
         <>
-        <p>El contador va: {contador}</p>
+        <footer>
+        </footer>
         
         
         </>

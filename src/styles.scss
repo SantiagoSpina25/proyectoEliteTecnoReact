@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header {
+    background-color: rgb(222, 222, 222);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+}
+
+
+.nav{
+
+    ul{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        li{
+            list-style: none;
+            padding: 15px;
+
+            a{
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+img{
+    max-width: 300px;
+}
+
