@@ -26,6 +26,7 @@
         justify-content: space-between;
         align-items: center;
 
+        
         li{
             list-style: none;
             padding: 15px;
@@ -34,10 +35,41 @@
                 text-decoration: none;
             }
         }
+        li:hover{
+            border-bottom: 1px solid black;
+        }
+        
+
     }
 }
 
 img{
-    max-width: 300px;
+    max-width: 250px;
+}
+
+button{
+    padding: 0.5rem;
+    background: black;
+    color: white;
+
+    &:hover{
+        background: grey;
+    }
+    
+}
+
+.itemList{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.cardItems{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid;
 }
 

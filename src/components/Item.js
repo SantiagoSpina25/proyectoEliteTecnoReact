@@ -1,11 +1,14 @@
 const Item = ({producto}) => {
+
+  const {id, nombre, marca, imagen, categoria, descripcion, precio, stock} = producto
+
   return (
-    <>
-    <h2>{producto.nombre}</h2>
-    <img src={producto.imagen} alt={producto.nombre}/>
-    <p>$ {producto.precio}</p>
+    <article className="cardItems">
+    <h2>{nombre}</h2>
+    <img src={imagen} alt={nombre}/>
+    <p>$ {precio}</p>
     <button>Añadir al carrito</button>
-    </>
+    </article>
   )
 }
 export default Item
