@@ -1,7 +1,7 @@
 import NavBar from "./components/NavBar";
-import ItemListContainer from "./components/ItemListContainer";
+import Main from "./components/Main";
 import Footer from "./components/Footer";
-import ItemDetailContainer from "./components/ItemDetailContainer";
+import { BrowserRouter } from "react-router-dom";
 
 
 
@@ -11,12 +11,11 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 const App = () => {
   
   return (
-    <>
-    <NavBar/>
-    <ItemListContainer/>
-    <ItemDetailContainer/>
-    <Footer></Footer>
-    </> 
+    <BrowserRouter>
+      <NavBar/>
+      <Main></Main>
+      <Footer></Footer>
+    </BrowserRouter> 
   )
 }
 

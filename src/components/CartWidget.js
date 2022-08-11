@@ -1,7 +1,9 @@
+import {Link} from "react-router-dom"
 
 const CartWidget = () =>{
+
     return (
-        <img src="./LogoEliteTecno.png" className="logo"/>
+        <Link to={"/"}><img src="../LogoEliteTecno.png" className="logo"/></Link>
     )
 }
 

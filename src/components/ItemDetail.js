@@ -1,7 +1,24 @@
+import { useState } from "react"
+import ItemCount from "./ItemCount"
 
 const ItemDetail = ({detalleProducto}) => {
 
-  const {id, nombre, marca, imagen, categoria, descripcion, precio, stock} = detalleProducto
+  const [contador, setContador] = useState(0)
+  let stock = 5
+
+  const sumarContador =()=>{
+    if(contador < stock){
+    setContador(contador + 1)
+    }
+}
+
+const restarContador =()=>{
+    if(contador >1){
+    setContador(contador - 1)
+}
+}    
+
+  const {id, nombre, marca, imagen, categoria, descripcion, precio} = detalleProducto
 
   return (
     <div className="cardItemDetalle">
@@ -10,6 +27,7 @@ const ItemDetail = ({detalleProducto}) => {
     <p>$ {precio}</p>
     <p>{descripcion}</p>
     <button>Comprar</button>
+    <ItemCount contador={contador} sumarContador={sumarContador} restarContador={restarContador}/>
     </div>
   )
 }

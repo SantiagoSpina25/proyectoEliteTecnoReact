@@ -1,58 +1,52 @@
-import { useState } from "react";
-import { useEffect } from "react";
-import ItemCount from "./ItemCount"
+import { useState, useEffect } from "react";
+import {useParams} from "react-router-dom"
 import ItemList from "./ItemList";
 import { productos } from "../assets/productos";
 
 
 
 const ItemListContainer = () =>{
-
-    const [contador, setContador] = useState(0)
-    const [listaProductos, setListaProductos] = useState([])
-    const [loading, setLoading]=useState(true)
-    let stock = 5
-
-    const sumarContador =()=>{
-        if(contador < stock){
-        setContador(contador + 1)
-        }
-    }
     
-    const restarContador =()=>{
-        if(contador >1){
-        setContador(contador - 1)
-    }
-    }    
-
+    const [listaProductos, setListaProductos] = useState([])
+    const {id} = useParams()
+    const [loading, setLoading]=useState(true)
+    
+    
     useEffect(() => {
         new Promise((res,rej)=>{
+            setLoading(true)
+            
             setTimeout(()=>{
                 res(productos)
             },2000)
-    
+
         })
         .then(data=> {
             setLoading(false)
             setListaProductos(data)})
-    }, []) 
-
-
-    
-    
-
-
+            console.log("se ejecuta efecto")
+        }, [id]) 
 
     
-    return(
-        <>
-        {loading && <h2>...Cargando</h2>}
-        {!loading && <ItemList listaProductos={listaProductos}/> }    	    
-        <ItemCount stock={stock} contador={contador} setContador={setContador} sumarContador={sumarContador} restarContador={restarContador}></ItemCount>
 
-        </>
-    )
-}
+    if(id == undefined){
+        return(
+            <>
+            {loading && <div className="spinner__container"><div className="spinner"></div></div>}
+            {!loading && <ItemList listaProductos={listaProductos}/> }    	    
+            </>
+        )
+    }else{
+        const productosFiltrados = listaProductos.filter(productos => productos.categoria == id)
+        return(
+            <>
+            {loading && <div className="spinner__container"><div className="spinner"></div></div>}
+            {!loading && <ItemList listaProductos={productosFiltrados}/>}
+            </>
+        )
+    }
+
+    }
 
 
 

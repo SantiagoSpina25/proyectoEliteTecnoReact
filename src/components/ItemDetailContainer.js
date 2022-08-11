@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect} from "react";
+import { useParams } from "react-router-dom"
 import ItemDetail from "./ItemDetail"
 import { productos } from "../assets/productos"
 
@@ -9,7 +9,9 @@ const ItemDetailContainer = () => {
     const [detalleProducto, setDetalleProducto] = useState({})
     const [loading, setLoading]=useState(true)
 
-    let productoElegido = productos.find(producto => producto.id == 1)
+    const {id} = useParams() 
+
+    let productoElegido = productos.find(producto => producto.id == id)
 
 
 
@@ -23,7 +25,7 @@ const ItemDetailContainer = () => {
         .then(data=> {
             setLoading(false)
             setDetalleProducto(data)})
-    }, []) 
+    }, [id]) 
 
 
     
@@ -31,7 +33,7 @@ const ItemDetailContainer = () => {
     
     return(
         <>
-        {loading && <h2>...Cargando</h2>}
+        {loading && <div className="spinner__container"><div className="spinner"></div></div>}
         {!loading && <ItemDetail detalleProducto={detalleProducto}/> }    	    
         </>
     )

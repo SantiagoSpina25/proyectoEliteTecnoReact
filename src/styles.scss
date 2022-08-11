@@ -5,8 +5,12 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+body{
+    min-height: 1200px;
+}
+
 .header {
-    background-color: rgb(222, 222, 222);
+    background-color: rgb(242, 242, 242);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,7 +51,7 @@ img{
     max-width: 250px;
 }
 
-button{
+button , .button{
     padding: 0.5rem;
     background: black;
     color: white;
@@ -55,14 +59,19 @@ button{
     &:hover{
         background: grey;
     }
+
+    a{
+        text-decoration: none;
+    }
     
 }
+
 
 .itemList{
     display: flex;
     justify-content: space-around;
     align-items: center;
-
+    margin: 25px;
 }
 
 .cardItems{
@@ -70,6 +79,33 @@ button{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: 2px solid;
+    border: 2px solid rgb(247, 232, 232);
+    border-radius: 5px;
+
+    padding: 10px;
 }
 
+.active{
+    color: red;
+}
+
+.spinner{
+    border: 15px solid rgb(53, 53, 53);
+    border-bottom: 15px solid rgb(255, 116, 52);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: spinner 0.5s linear infinite;
+
+    &__container{
+        height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@keyframes spinner {
+    0%{transform: rotate(0deg) ;}
+    100%{transform: rotate(360deg);}
+}
