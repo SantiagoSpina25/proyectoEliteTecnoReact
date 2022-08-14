@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import {useParams} from "react-router-dom"
 import ItemList from "./ItemList";
 import { productos } from "../assets/productos";
+import TituloPage from "./TituloPage"
 
 
 
@@ -24,7 +25,6 @@ const ItemListContainer = () =>{
         .then(data=> {
             setLoading(false)
             setListaProductos(data)})
-            console.log("se ejecuta efecto")
         }, [id]) 
 
     
@@ -32,6 +32,7 @@ const ItemListContainer = () =>{
     if(id == undefined){
         return(
             <>
+            <TituloPage titulo="Catálogo de productos"/>
             {loading && <div className="spinner__container"><div className="spinner"></div></div>}
             {!loading && <ItemList listaProductos={listaProductos}/> }    	    
             </>

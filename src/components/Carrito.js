@@ -1,8 +1,9 @@
+import TituloPage from "./TituloPage"
 
 
 const Carrito = () => {
   return (
-    <div>Carrito</div>
+    <TituloPage titulo="Carrito"/>
   )
-}
+} 
 export default Carrito

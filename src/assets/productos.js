@@ -34,5 +34,28 @@ export const productos=[
                     Alloy Origins Core está construido con un cuerpo de aluminio completo para que se mantenga rígido y estable cuando se pulsan las teclas, y también cuenta con pies de teclado que le permiten elegir entre tres niveles de inclinación diferentes.`,
         precio: 49.99,
         stock: 16
+    },
+    {
+        id: 3,
+        nombre: "Intel Core i7-12700F",
+        marca: "INTEL",
+        imagen: "https://img.pccomponentes.com/articles/83/834913/1203-intel-core-i7-12700f-49-ghz.jpg",
+        categoria: "procesadores",
+        descripcion:`Procesadores Intel® Core™ de 12ª generación: una generación como ninguna otra antes.
+                     Con una nueva arquitectura híbrida de rendimiento sin precedentes, los procesadores Intel® Core™ de 12ª generación ofrecen una combinación única de núcleos de rendimiento y eficiencia (núcleo P y núcleo E). Y eso significa gozar de rendimiento en el mundo real, un resultado escalado intuitivamente para adaptarse a cualquier cosa que estés haciendo.`,
+        precio: 385.99,
+        stock: 10
+    },
+    {
+        id: 4,
+        nombre: "Zotac Gaming GeForce RTX 3060 Twin Edge",
+        marca: "Zotac",
+        imagen: "https://img.pccomponentes.com/articles/35/357142/1351-zotac-gaming-geforce-rtx-3060-twin-edge-12gb-gddr6.jpg",
+        categoria: "graficas",
+        descripcion:`Obtenga amplificación con la serie ZOTAC GAMING GeForce RTX ™ 30 basada en la arquitectura NVIDIA Ampere.
+                    Construida con RT Cores y Tensor Cores mejorados, nuevos multiprocesadores de transmisión y memoria GDDR6 de alta velocidad,
+                    la ZOTAC GAMING GeForce RTX 3060 Twin Edge da lugar a juegos amplificados con alta fidelidad.`,
+        precio: 417.99,
+        stock: 6
     }
 ]

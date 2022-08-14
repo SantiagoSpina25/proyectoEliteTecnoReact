@@ -9,7 +9,7 @@ const Item = ({producto}) => {
   
 
   return (
-    <article className="cardItems">
+    <article className="card__item">
     <h2>{nombre}</h2>
     <img src={imagen} alt={nombre}/>
     <p>$ {precio}</p>
