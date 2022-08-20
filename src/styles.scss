@@ -22,6 +22,12 @@ body{
     height: 100px;
 }
 
+.titulo{
+    font-size: 40px;
+    span{
+        color: rgb(255, 116, 52);
+    }
+}
 
 .nav{
 
@@ -66,6 +72,7 @@ button , .button{
     &__finalizarCompra__container{
         display: flex;
         justify-content: space-around;
+        align-items: center;
         margin-top: 50px;
 
 
@@ -77,11 +84,12 @@ button , .button{
     justify-content: space-around;
     align-items: center;
     margin: 25px;
+    height: 800px;
 }
 
 .card__item{
-    width: 300px;
-    height: 350px;
+    width: 500px;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,6 +97,10 @@ button , .button{
     border: 2px solid rgb(247, 232, 232);
     border-radius: 5px;
     padding: 20px;
+
+    &__imagen{
+        max-width: 200px;
+    }
 
     h2{
         font-size: 18px;
@@ -99,10 +111,49 @@ button , .button{
     }
 
     &__detalle{
-        img{
-            max-width: 400px;
+        display: flex;
+        justify-content: space-around;
+        height: 700px;
+
+
+        &__imagen{
+            width: 40%;
+           
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid rgb(247, 232, 232);
+
+            img{
+                max-width: 400px;
+            }
+        }
+
+        &__info{
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid rgb(247, 232, 232);
+
+            h2, p{
+                margin: 20px;
+                max-width: 550px;
+            }
+        }
+
+        &__precio{
+            color: red;
+            font-size: 24px;
+            padding: 10px;
+        }
+
+        &__counter{
+            text-align: center;
         }
     }
+
 }
 
 .active{
@@ -137,3 +188,32 @@ button , .button{
     color: rgb(225, 101, 44);
 }
 
+footer{
+    background-color: black;
+    height: 250px;
+    margin-top: 380px; 
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    ul{list-style-type: none;}
+}
+
+.footer__content{
+    padding: 15px;
+    p{
+        padding: 15px 0;
+        max-width: 300px;
+    }
+}
+
+.footer__redes{
+    ul{
+        display: flex;
+
+        li{
+            padding: 15px;
+        }
+    }
+}

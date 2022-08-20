@@ -1,28 +1,40 @@
-import { useState } from "react"
 import ItemCount from "./ItemCount"
+import { useState } from "react"
+import { CartContext } from "../context/CartContext"
+import { useContext } from "react"
 
 const ItemDetail = ({detalleProducto}) => {
-
+  
   let stock = 5
   const [contador, setContador] = useState(0)
-  const [cantidadProd, setCantidadProd] = useState(0)
 
-  const onAdd =(quantityToAdd)=>{
-    setCantidadProd(quantityToAdd)  
-  } 
-
-
-
+  const {carrito, agregarItem, estaEnCarrito}= useContext(CartContext)
   const {id, nombre, marca, imagen, categoria, descripcion, precio} = detalleProducto
+  
+  const onAdd =()=>{
+    alert(`Cantidad de productos ${contador}`)
+    estaEnCarrito(detalleProducto.id)
+    agregarItem(detalleProducto, contador)
+
+  } 
+  
+  
+
 
     return (
       <div className="card__item__detalle">
-      <h2>{nombre}</h2>
-      <img src={imagen} alt={nombre}/>
-      <p>$ {precio}</p>
-      <p>{descripcion}</p>
-      <p>El contador va: {contador}</p>
-      <ItemCount contador={contador} setContador={setContador} stock={stock} onAdd={onAdd}/>
+        <div className="card__item__detalle__imagen">
+          <img src={imagen} alt={nombre}/>
+        </div>
+        <div className="card__item__detalle__info">
+          <h2>{nombre}</h2>
+          <p className="card__item__detalle__precio">$ {precio}</p>
+          <p>{descripcion}</p>
+          <div className="card__item__detalle__counter">
+            <p>Cantidad: {contador}</p>
+            <ItemCount contador={contador} setContador={setContador} stock={stock} onAdd={onAdd}/>
+          </div>
+        </div>
       </div>
     )
 

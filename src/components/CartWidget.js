@@ -1,9 +1,11 @@
-import {Link} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 
 const CartWidget = () =>{
 
     return (
-        <Link to={"/"}><img src="../LogoEliteTecno.png" className="logo"/></Link>
+        <>
+        <li><NavLink to="/carrito" className="material-symbols-rounded">shopping_cart</NavLink></li>
+        </>
     )
 }
 

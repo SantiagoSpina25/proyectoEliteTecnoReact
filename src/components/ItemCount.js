@@ -1,8 +1,7 @@
-import {Link} from "react-router-dom"
 
 
 const ItemCount =({contador, setContador, stock, onAdd})=>{
-
+    
     
     const sumarContador =()=>{
         if(contador < stock){
@@ -17,7 +16,7 @@ const ItemCount =({contador, setContador, stock, onAdd})=>{
     }  
 
     const confirmar= () =>{
-        onAdd(contador)
+        onAdd()
     }
 
     return(
@@ -25,7 +24,7 @@ const ItemCount =({contador, setContador, stock, onAdd})=>{
         <button className="material-symbols-outlined" onClick={sumarContador}>add</button>
         <button className="material-symbols-outlined" onClick={restarContador}>remove</button>
         <div className="button__finalizarCompra__container">
-        <Link to="/carrito"><button onClick={confirmar}>Terminar Compra</button></Link>
+        <button onClick={confirmar}>Terminar Compra</button>
         </div>
         </>
     )
