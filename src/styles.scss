@@ -217,3 +217,62 @@ footer{
         }
     }
 }
+
+.carrito{
+
+    &__vacio{
+        font-size: 20px;
+        text-align: center;
+        margin: 60px;
+
+        p{
+            margin: 60px;
+
+        }
+
+        button{
+            width: 150px;
+            height: 50px;
+            border-radius: 4px;
+        }
+    }
+
+    &__item{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border: 1px solid grey;
+        padding: 20px;
+        max-width: 1000px;
+        margin: 30px;
+
+        &__imagen{
+            width: 130px;
+        }
+
+        &__info{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-left: 130px;
+
+            h2{
+                font-size: 18px;
+                padding-bottom: 15px;
+            }
+        }
+
+        &__botones{
+            margin-left:300px;
+        }
+    }
+
+    &__precioTotal{
+        margin: 30px;
+        font-size: 20px;
+    }
+
+}
+
+
