@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import {useParams} from "react-router-dom"
 import ItemList from "./ItemList";
-import { productos } from "../assets/productos";
 import TituloPage from "./TituloPage"
-
+import { db } from "../firebase";
+import { collection, getDoc, getDocs } from "firebase/firestore";
 
 
 const ItemListContainer = () =>{
@@ -14,22 +14,29 @@ const ItemListContainer = () =>{
     
     
     useEffect(() => {
-        new Promise((res,rej)=>{
-            setLoading(true)
-            
-            setTimeout(()=>{
-                res(productos)
-            },2000)
+        setLoading(true)
 
-        })
-        .then(data=> {
+        const productosEnCollection = collection(db, "productos")
+        const pedido = getDocs(productosEnCollection)
+
+        pedido
+        .then(x =>{
+            const productos = x.docs.map(doc=>{
+               return {
+                ...doc.data(),
+                id: doc.id
+                } 
+            })
+            setListaProductos(productos)
             setLoading(false)
-            setListaProductos(data)})
+        })
+
+        .catch(error => console.log(error))
         }, [id]) 
 
     
 
-    if(id == undefined){
+    if(id === undefined){
         return(
             <>
             <TituloPage titulo="Catálogo de productos"/>
@@ -38,7 +45,7 @@ const ItemListContainer = () =>{
             </>
         )
     }else{
-        const productosFiltrados = listaProductos.filter(productos => productos.categoria == id)
+        const productosFiltrados = listaProductos.filter(productos => productos.categoria === id)
         return(
             <>
             {loading && <div className="spinner__container"><div className="spinner"></div></div>}
