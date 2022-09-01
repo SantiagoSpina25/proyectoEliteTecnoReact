@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom"
 import ItemList from "./ItemList";
 import TituloPage from "./TituloPage"
 import { db } from "../firebase";
-import { collection, getDoc, getDocs } from "firebase/firestore";
+import { collection, getDoc, getDocs, query, where } from "firebase/firestore";
 
 
 const ItemListContainer = () =>{
@@ -14,27 +14,45 @@ const ItemListContainer = () =>{
     
     
     useEffect(() => {
-        setLoading(true)
-
         const productosEnCollection = collection(db, "productos")
-        const pedido = getDocs(productosEnCollection)
-
-        pedido
-        .then(x =>{
-            const productos = x.docs.map(doc=>{
-               return {
-                ...doc.data(),
-                id: doc.id
-                } 
+        if (!id){
+            const consulta = getDocs(productosEnCollection)
+            
+            consulta
+            .then(x =>{
+                const productos = x.docs.map(doc=>{
+                   return {
+                    ...doc.data(),
+                    id: doc.id
+                    } 
+                })
+                setListaProductos(productos)
+                setLoading(false)
             })
-            setListaProductos(productos)
-            setLoading(false)
-        })
+        
+            .catch(error => console.log(error))
 
-        .catch(error => console.log(error))
+
+        }
+        else{
+            const filtro = query(productosEnCollection, where("categoria","==",id))
+            const consulta = getDocs(filtro)
+
+            consulta
+            .then(x =>{
+                const productos = x.docs.map(doc=>{
+                    return {
+                        ...doc.data(),
+                        id: doc.id
+                    } 
+                })
+                setListaProductos(productos)
+                setLoading(false)
+            })
+        }
+        setLoading(true)
+ 
         }, [id]) 
-
-    
 
     if(id === undefined){
         return(

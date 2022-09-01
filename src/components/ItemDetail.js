@@ -2,6 +2,7 @@ import ItemCount from "./ItemCount"
 import { useState } from "react"
 import { CartContext } from "../context/CartContext"
 import { useContext } from "react"
+import Swal from 'sweetalert2'
 
 const ItemDetail = ({detalleProducto}) => {
   
@@ -12,7 +13,10 @@ const ItemDetail = ({detalleProducto}) => {
   const {id, nombre, marca, imagen, categoria, descripcion, precio} = detalleProducto
   
   const onAdd =()=>{
-    alert(`Cantidad de productos ${contador}`)
+    Swal.fire({
+      icon: "success",
+      title: `Cantidad de productos: ${contador}`
+    })
     estaEnCarrito(detalleProducto.id)
     agregarItem(detalleProducto, contador)
 

@@ -2,7 +2,7 @@ import { useState, useEffect} from "react";
 import { useParams } from "react-router-dom"
 import ItemDetail from "./ItemDetail"
 import { db } from "../firebase";
-import { collection, getDoc, getDocs } from "firebase/firestore";
+import { collection, getDoc, doc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
 
@@ -15,27 +15,28 @@ const ItemDetailContainer = () => {
     
     
     useEffect(() => {
+        
         setLoading(true)
         
         const productosEnCollection = collection(db, "productos")
-        const pedido = getDocs(productosEnCollection)
+        const consulta = getDoc(doc(productosEnCollection,id))
         
-        pedido
-        .then(x =>{
-            const productos = x.docs.map(doc=>{
-                return {
-                    ...doc.data(),
-                    id: doc.id
-                } 
-            })
-            let productoElegido = productos.find(producto => producto.id == id)
-            setDetalleProducto(productoElegido)
-            setLoading(false)
+        consulta
+        .then((prod)=>{
+            
+            const producto = {
+                ...prod.data(),
+                id: prod.id    
+            }
+                
+                
+            setDetalleProducto(producto)
+            
         })
 
         .catch(error => console.log(error))
-        
-    }, [id]) 
+        setLoading(false)
+        },[id])
 
 
     
@@ -46,7 +47,6 @@ const ItemDetailContainer = () => {
         {loading && <div className="spinner__container"><div className="spinner"></div></div>}
         {!loading && <ItemDetail detalleProducto={detalleProducto}/> }    	    
         </>
-    )
+    )}
 
-}
 export default ItemDetailContainer 

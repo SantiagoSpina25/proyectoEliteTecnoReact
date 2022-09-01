@@ -32,6 +32,7 @@ const Carrito = () => {
         )
       })}
       <button onClick={vaciarCarrito}>Vaciar Carrito</button>
+      <Link to={"/formulario"}><button>Completar compra</button></Link>
       <p className="carrito__precioTotal">Precio Total: ${obtenerPrecioTotal()} </p>
     </>
   )

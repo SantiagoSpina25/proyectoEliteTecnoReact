@@ -275,4 +275,22 @@ footer{
 
 }
 
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 150px;
+
+
+    &__input{
+        padding: 10px;
+        margin: 10px;
+        width: 300px;
+    }
+
+    button{
+        width: 200px;
+    }
+}
 
