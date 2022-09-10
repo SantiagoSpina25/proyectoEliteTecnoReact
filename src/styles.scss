@@ -5,6 +5,8 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+$color-principal: rgb(255, 116, 52);
+
 body{
     min-height: 1200px;
 }
@@ -25,7 +27,7 @@ body{
 .titulo{
     font-size: 40px;
     span{
-        color: rgb(255, 116, 52);
+        color: $color-principal;
     }
 }
 
@@ -51,22 +53,34 @@ body{
         
 
     }
+
+    &__carrito{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background-color: $color-principal;
+        border-radius: 20px;
+
+    }
 }
 
 
 
 button , .button{
-    padding: 0.5rem;
-    background: black;
+    padding: 0.8rem;
+    background: $color-principal;
     color: white;
+    border: none;
+    border-radius: 3px;
 
     &:hover{
-        background: grey;
+        background: rgb(205, 67, 67);
+        cursor:pointer;
     }
 
     a{
         text-decoration: none;
-        color: white;
     }
 
     &__finalizarCompra__container{
@@ -82,32 +96,29 @@ button , .button{
 .itemList{
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     align-items: center;
     margin: 25px;
     height: 800px;
 }
 
 .card__item{
-    width: 500px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border: 2px solid rgb(247, 232, 232);
     border-radius: 5px;
-    padding: 20px;
-
-    &__imagen{
-        max-width: 200px;
-    }
-
+    padding: 15px;
+    margin: 10px;
     h2{
         font-size: 18px;
     }
 
     img{
-        max-width: 210px;
+        max-width: 150px;
     }
 
     &__detalle{
@@ -162,7 +173,7 @@ button , .button{
 
 .spinner{
     border: 15px solid rgb(53, 53, 53);
-    border-bottom: 15px solid rgb(255, 116, 52);
+    border-bottom: 15px solid $color-principal;
     border-radius: 50%;
     width: 100px;
     height: 100px;
@@ -191,7 +202,7 @@ button , .button{
 footer{
     background-color: black;
     height: 250px;
-    margin-top: 380px; 
+    margin-top: 180px; 
     color: white;
     display: flex;
     justify-content: space-between;

@@ -3,6 +3,7 @@ import { CartContext } from "../context/CartContext"
 import { db } from "../firebase";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
 
@@ -23,6 +24,8 @@ const Form = () => {
 
     }
 
+    const navigate = useNavigate()
+
     
 
     const handleConfirm = (e) =>{
@@ -40,7 +43,6 @@ const Form = () => {
             total: obtenerPrecioTotal(),
             
         }
-        console.log(pedido)
 
         
         const coleccionPedidos = collection(db, "pedidos")
@@ -51,10 +53,22 @@ const Form = () => {
 
             Swal.fire({
                 icon: "success",
-                title: `El id de su compra es: ${res.id}`
+                title: "Gracias por su compra!",
+                html: `El id de su compra es: <b>${res.id}</b>`,
+                confirmButtonText: "Aceptar"
+            }).then((res)=>{
+                if(res.isConfirmed)
+                Swal.fire({
+                    icon: "info",
+                    text: "Seras redirigido al home en 3 segundos..."
+                })  
+                setTimeout(()=>{
+                    navigate("/")
+                },3000)
             })
 
             vaciarCarrito()
+            
         })
         .catch(error => console.log(error))
     }

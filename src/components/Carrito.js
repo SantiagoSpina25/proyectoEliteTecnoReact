@@ -40,7 +40,7 @@ const Carrito = () => {
   return(
     <div className="carrito__vacio">
       <h2>El carrito esta vacio!</h2>
-      <p>Si quiere añadir algun producto, por favor, vaya al inicio</p>
+      <p>Si quiere añadir algun producto, por favor, vaya al Home</p>
       <Link to={"/"}><button>Inicio</button></Link>
     </div>
   )
