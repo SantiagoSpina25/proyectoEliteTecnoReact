@@ -9,8 +9,8 @@ const ItemDetail = ({detalleProducto}) => {
   let stock = 5
   const [contador, setContador] = useState(1)
 
-  const {carrito, agregarItem, estaEnCarrito}= useContext(CartContext)
-  const {id, nombre, marca, imagen, categoria, descripcion, precio} = detalleProducto
+  const { agregarItem, estaEnCarrito}= useContext(CartContext)
+  const { nombre, imagen, descripcion, precio} = detalleProducto
   
   const onAdd =()=>{
     Swal.fire({

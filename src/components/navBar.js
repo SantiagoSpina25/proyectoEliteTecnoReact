@@ -9,7 +9,6 @@ const NavBar = () => {
     const {carrito,obtenerCantidad} = useContext(CartContext)
 
     return (
-        <>
         <header className="header">
             <Link to={"/"}><img src="../LogoEliteTecno.png" className="logo" alt="logo"/></Link>
             <h1 className="titulo">Elite <span>Tecno</span></h1>
@@ -24,9 +23,6 @@ const NavBar = () => {
                 </ul>    
             </nav>
         </header>
-        </>
-        
-
     )
 }
 

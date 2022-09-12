@@ -70,14 +70,20 @@ const Form = () => {
             vaciarCarrito()
             
         })
-        .catch(error => console.log(error))
+
+        .catch(error =>{
+            Swal.fire({
+                icon: "error",
+                title: "ups! se produjo un error"
+            })
+        })
     }
 
     return (
 
     <div className="form__container">
 
-        <h2>Para completar la compra, por favor, rellene sus datos:</h2>
+        <h2 className="form__text">Para completar la compra, por favor, rellene sus datos:</h2>
 
         <form className="form">
 

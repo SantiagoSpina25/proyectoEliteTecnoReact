@@ -1,8 +1,6 @@
-import { Link } from "react-router-dom";
 
 const Footer = ()=>{
     return(
-        <>
         <footer>
             <div className="footer__content">
                 <h3>Sobre nosotros</h3>
@@ -17,9 +15,6 @@ const Footer = ()=>{
                 </ul>
             </div>
         </footer>
-        
-        
-        </>
     )
 }
 

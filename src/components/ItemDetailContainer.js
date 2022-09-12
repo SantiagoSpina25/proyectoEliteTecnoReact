@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom"
 import ItemDetail from "./ItemDetail"
 import { db } from "../firebase";
 import { collection, getDoc, doc } from "firebase/firestore";
+import Swal from "sweetalert2";
 
 const ItemDetailContainer = () => {
 
@@ -34,7 +35,12 @@ const ItemDetailContainer = () => {
             
         })
 
-        .catch(error => console.log(error))
+        .catch(error =>{
+            Swal.fire({
+                icon: "error",
+                title: "ups! se produjo un error"
+            })
+        })
         setLoading(false)
         },[id])
 

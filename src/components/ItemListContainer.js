@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import {useParams} from "react-router-dom"
 import ItemList from "./ItemList";
 import TituloPage from "./TituloPage"
+import Swal from "sweetalert2";
 import { db } from "../firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
@@ -30,8 +31,12 @@ const ItemListContainer = () =>{
                 setLoading(false)
             })
         
-            .catch(error => console.log(error))
-
+            .catch(error =>{
+                Swal.fire({
+                    icon: "error",
+                    title: "ups! se produjo un error"
+                })
+            })
 
         }
         else{

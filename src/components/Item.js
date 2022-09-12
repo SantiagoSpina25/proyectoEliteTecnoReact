@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 
 const Item = ({producto}) => {
 
-  const {id, nombre, marca, imagen, categoria, descripcion, precio} = producto
+  const {id, nombre, imagen, precio} = producto
   
 
   
@@ -13,7 +13,7 @@ const Item = ({producto}) => {
     <h2>{nombre}</h2>
     <img className="card__item__imagen" src={imagen} alt={nombre}/>
     <p className="card__item__detalle__precio">$ {precio}</p>
-    <button><Link className="button" to={`/item/${id}`}>Ver detalle</Link></button>
+    <Link to={`/item/${id}`}><button>Ver detalle</button></Link>
     </article>
   )
 }

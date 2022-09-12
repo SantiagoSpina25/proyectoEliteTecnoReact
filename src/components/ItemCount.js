@@ -26,8 +26,8 @@ const ItemCount =({contador, setContador, stock, onAdd})=>{
     
     return(
         <>
-        <button className="material-symbols-outlined" onClick={sumarContador}>add</button>
-        <button className="material-symbols-outlined" onClick={restarContador}>remove</button>
+        <button className="material-symbols-outlined card__item__detalle__counter__boton" onClick={sumarContador}>add</button>
+        <button className="material-symbols-outlined card__item__detalle__counter__boton" onClick={restarContador}>remove</button>
         <div className="button__finalizarCompra__container">
             {compraIniciada === true ? <Link to={"/carrito"}><button>Terminar Compra</button></Link> : <button onClick={confirmar}>Comprar</button>}
         </div>

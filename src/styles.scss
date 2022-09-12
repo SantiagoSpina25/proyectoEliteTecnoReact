@@ -66,7 +66,6 @@ body{
 }
 
 
-
 button , .button{
     padding: 0.8rem;
     background: $color-principal;
@@ -162,6 +161,11 @@ button , .button{
 
         &__counter{
             text-align: center;
+
+
+            &__boton{
+                margin: 0 10px;
+            }
         }
     }
 
@@ -293,6 +297,9 @@ footer{
     flex-direction: column;
     margin: 150px;
 
+    &__texto{
+        margin: 70px 0 0 30px
+    }
 
     &__input{
         padding: 10px;

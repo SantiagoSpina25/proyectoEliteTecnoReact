@@ -1,5 +1,7 @@
 # Elite Tecno 💻
-  
+
+![Gif de Elite Tecno](https://media.giphy.com/media/VtPp7lArwJETOLnMrM/giphy.gif)
+
 
 ## Descripcion
 
@@ -40,4 +42,3 @@
 * **sweetAlert2** : Se utiliza sweetAlert2 para dar alertas personalizadas e informen al usuario dentro de la pagina
 
 * **react-router-dom** : Se utiliza react-router-dom para navegar en la pagina con React Router 
-
