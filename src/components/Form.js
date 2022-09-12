@@ -35,7 +35,7 @@ const Form = () => {
         const pedido ={
             buyer:{
                 name: usuario.nombre,
-                phone: usuario.apellido,
+                phone: usuario.telefono,
                 email: usuario.email,
             },
             items: carrito,
